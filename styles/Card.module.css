@@ -1,0 +1,112 @@
+.card {
+  background-color: white;
+  border: 1px solid #000000;
+  padding: 1.5rem;
+
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  /* white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;  */
+}
+
+.card p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+  /* white-space: nowrap;  */
+  /* overflow: hidden; 
+  text-overflow: ellipsis;  */
+}
+
+.card button {
+  background-color: #3c0753;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #22092c;
+  transform: scale(1.05);
+}
+.card a {
+  margin-top: auto;
+}
+
+.topPicks {
+  width: 36px;
+  height: 32px;
+}
+
+.title_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  margin-top: auto;
+  margin-left: 0;
+}
+
+.rating label {
+  cursor: pointer;
+}
+
+.rating input {
+  display: none;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.filled {
+  color: #ffcc00;
+}
+
+.rating label:hover ~ label .star {
+  color: #ccc;
+}
+
+.rating label:hover .star {
+  color: #ffcc00;
+}
+.rating p {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+  flex-grow: 0;
+}

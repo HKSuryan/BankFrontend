@@ -1,95 +1,72 @@
-import Image from "next/image";
+import Card from "../components/Card";
 import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+const Home = () => {
+  const cards = [
+    {
+      id: 1,
+      title: "Savings Account",
+      isTopPick: true,
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+    {
+      id: 2,
+      title: "Current Account",
+      isTopPick: false,
+      description:
+        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    },
+    {
+      id: 3,
+      title: "Fixed Deposit",
+      isTopPick: false,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare non libero eu vulputate. Morbi ut ultricies sapien. Praesent cursus libero eu felis vehicula, vitae gravida orci varius.",
+    },
+    {
+      id: 4,
+      title: "Savings Account",
+      isTopPick: true,
+      description:
+        "Sed vitae scelerisque sapien. Phasellus consectetur purus non justo auctor, ut vulputate purus pulvinar. In erat nisi, vehicula ac viverra at, accumsan non tellus.",
+    },
+    {
+      id: 5,
+      title: "Current Account",
+      isTopPick: false,
+      description:
+        "Start your banking journey with HDFC Bank's Savings Account, explore a wide range of features & benefits with exclusive deals available with different account variants.",
+    },
+    {
+      id: 6,
+      title: "Fixed Deposit",
+      isTopPick: false,
+      description:
+        "Start your banking journey with HDFC Bank's Savings Account, explore a wide range of features & benefits with exclusive deals available with different account variants.",
+    },
+  ];
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+  return (
+    <div className={styles.body_main}>
+      <div style={{ paddingLeft: "3rem", paddingTop: "1.5rem" }}>
+        <h1 style={{ color: "#17153B" }}>Featured Products</h1>
+        <p>Explore wide range of products and services that we offer</p>
+      </div>
+
+      <div className={styles.grid}>
+        {cards.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            title={card.title}
+            description={card.description}
+            isTopPick={card.isTopPick}
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default Home;
