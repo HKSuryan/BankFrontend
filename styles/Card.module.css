@@ -109,4 +109,5 @@
   margin-bottom: auto;
   display: block;
   flex-grow: 0;
+  padding-right: 5px;
 }
